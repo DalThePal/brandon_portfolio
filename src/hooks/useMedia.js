@@ -10,7 +10,7 @@ export default function useMedia(fw, d, t, m) {
       setCurrent(fw)
     } else if (window.innerWidth > breakpoints.tablet) {
       setCurrent(d)
-    } else if (window.innerWidth > breakpoints.desktop) {
+    } else if (window.innerWidth > breakpoints.mobile) {
       setCurrent(t)
     } else setCurrent(m)
   }, [fw, d, t, m])

@@ -10,10 +10,12 @@ import useMedia from 'hooks/useMedia'
 
 import { ReactComponent as LogoSVG } from 'images/logo.svg'
 import BGDesktopIMG from 'images/background-desktop.jpg'
+import BGTabletIMG from 'images/background-tablet.jpg'
+import BGMobileIMG from 'images/background-mobile.jpg'
 
 const Hero = () => {
 
-  const background = useMedia(BGDesktopIMG, BGDesktopIMG, BGDesktopIMG, BGDesktopIMG,)
+  const background = useMedia(BGDesktopIMG, BGDesktopIMG, BGTabletIMG, BGMobileIMG)
 
   return (
     <Wrapper $background={background}>
@@ -41,7 +43,9 @@ export default Hero
 
 const Wrapper = styled.section`
   background-image: url(${props => props.$background});
-  background-size: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -60,6 +64,11 @@ const Logo = styled(LogoSVG)`
     height: 6.44vh;
     top: 1.09vh;
   }
+
+  ${media.mobile} {
+    height: 10.83vh;
+    top: 1.84vh;
+  }
 `
 
 const Title = styled.h1`
@@ -73,6 +82,11 @@ const Title = styled.h1`
   ${media.tablet} {
     top: 42%;
     height: 43.33vh;
+  }
+
+  ${media.mobile} {
+    top: 37%;
+    height: 25.12vh;
   }
 `
 
@@ -94,24 +108,26 @@ const Span = styled.span`
   ${media.tablet} {
     font-size: 17.56vh;
   }
+
+  ${media.mobile} {
+    font-size: 9.85vh;
+  }
 `
 
 const Span2 = styled(Span)`
-  font-family: 'Ogg TRIAL';
+  font-family: 'Ogg';
   font-style: italic;
   color: ${colors.black};
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  background-size: 100%;
-  background-clip: text;
   -webkit-text-stroke: 1px ${colors.white};
 
   top: 20.5vh;
 
   ${media.tablet} {
     top: 12vh;
+  }
+
+  ${media.mobile} {
+    top: 7.14vh;
   }
 `
 
@@ -120,6 +136,10 @@ const Span3 = styled(Span)`
 
   ${media.tablet} {
     top: 24vh;
+  }
+
+  ${media.mobile} {
+    top: 14.28vh;
   }
 `
 
@@ -134,6 +154,18 @@ const Footer = styled.footer`
 
   height: 12.125vh;
   padding: 5vh 2.78vw;
+
+  ${media.tablet} {
+    height: 10.61vh;
+    padding: 4.09vh 3.91vw;
+  }
+
+  ${media.mobile} {
+    height: 11.94vh;
+    padding: 4.92vh 10.67vw;
+    justify-content: center;
+    gap: 13.33vw;
+  }
 `
 
 const Left = styled.div`
@@ -141,6 +173,14 @@ const Left = styled.div`
   align-items: center;
   
   gap: 3.47vw;
+
+  ${media.tablet} {
+    gap: 3.66vh;
+  }
+
+  ${media.mobile} {
+    gap: 13.33vw;
+  }
 `
 
 const Link = styled.a`
@@ -154,6 +194,14 @@ const Link = styled.a`
   cursor: pointer;
 
   font-size: 1.875vh;
+
+  ${media.tablet} {
+    font-size: 2.19vh;
+  }
+
+  ${media.mobile} {
+    font-size: 1.84vh;
+  }
 `
 
 const Text = styled.p`
@@ -167,11 +215,19 @@ const Text = styled.p`
   display: none;
   left: 50%;
   transform: translateX(-50%);
+  justify-content: center;
 
   ${media.tablet} {
     display: flex;
     font-size: 2.19vh;
     top: 65.30vh;
     width: 60.06vw;
+  }
+
+  ${media.mobile} {
+    display: flex;
+    font-size: 2.77vh;
+    top: 52.83vh;
+    width: 81.87vw;
   }
 `

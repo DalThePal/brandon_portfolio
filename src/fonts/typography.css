@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Neue Montreal';
+	src: url('./neue-montreal/NeueMontreal-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Ogg';
+  src: url('./ogg/Ogg-RegularItalic.otf') format('opentype');
+}
